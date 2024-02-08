@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<h1>View Doctors Schedule</h1>
+		<table border="1">
+			<tr>
+				<td>Doctor Name</td>
+				<td>Schedule</td>
+			</tr>
+            {% for i in x %}
+			<tr>
+				<td>{{ i.doctor_id }}</td>
+				<td><a href="">Appointment</a></td>
+			</tr>
+            {% endfor %}
+		</table>
+	</center>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<h1>View Reviews</h1>
+		<table border="1">
+			<tr>
+				<td>User Name</td>
+				<td>User Age</td>
+				<td>User Gender</td>
+				<td>Reviews</td>
+				<td>Date</td>
+				<td>Time</td>
+			</tr>
+            {% for i in x %}
+			<tr>
+				<td>{{ i.user_id }}</td>
+				<td>{{ i.user_id }}</td>
+				<td>{{ i.user_id }}</td>
+				<td>{{ i.review }}</td>
+				<td>{{ i.date }}</td>
+				<td>{{ i.time }}</td>
+			</tr>
+            {% endfor %}
+		</table>
+	</center>
+
+</body>
+</html>

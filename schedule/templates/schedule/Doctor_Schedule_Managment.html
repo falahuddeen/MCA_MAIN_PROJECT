@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<h1>Schedule Managment</h1>
+		<table border="1">
+			<tr>
+				<td>Schedule</td>
+				<td>Date</td>
+				<td>Time</td>
+			</tr>
+            {% for i in x %}
+			<tr>
+				<td>{{ i.schedule }}</td>
+				<td>{{ i.date }}</td>
+				<td>{{ i.time }}</td>
+				<td><a href="">Udate/Edit</a></td>
+				<td><a href="">Delete</a></td>
+			</tr>
+            {% endfor %}
+		</table>
+	</center>
+
+</body>
+</html>

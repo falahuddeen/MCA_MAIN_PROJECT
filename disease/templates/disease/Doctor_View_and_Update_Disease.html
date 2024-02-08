@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<h1>View Disease and Update</h1>
+		<table border="1">
+			<tr>
+				<td>Disease Name</td>
+				<td>Disease Symptoms</td>
+				<td>Disease Image</td>
+			</tr>
+            {% for i in x %}
+			<tr>
+				<td>{{ i.disease_name }}</td>
+				<td>{{ i.disease_symptom }}</td>
+				<td>{{ i.disease_image }}</td>
+				<td><a href="">Udate/Edit</a></td>
+				<td><a href="">Delete</a></td>
+			</tr>
+            {% endfor %}
+		</table>
+	</center>
+
+</body>
+</html>

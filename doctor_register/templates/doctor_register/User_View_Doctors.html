@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<h1>View Doctors</h1>
+		<table border="1">
+			<tr>
+				<td>Doctor Name</td>
+				<td>Mobile</td>
+				<td>Email</td>
+				<td>Age</td>
+				<td>Gender</td>
+				<td>Specialization</td>
+				<td>Profile Picture</td>
+			</tr>
+            {% for i in x %}
+			<tr>
+				<td>{{ i.name }}</td>
+				<td>{{ i.mobile }}</td>
+				<td>{{ i.email }}</td>
+				<td>{{ i.age }}</td>
+				<td>{{ i.gender }}</td>
+				<td>{{ i.specialization }}</td>
+				<td>{{ i.profile_pic }}</td>
+			</tr>
+            {% endfor %}
+		</table>
+	</center>
+
+</body>
+</html>

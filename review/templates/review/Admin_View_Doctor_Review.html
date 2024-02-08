@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<h1>View Doctor Review</h1>
+		<table border="1">
+			<tr>
+				<td>Doctor Name</td>
+				<td>Review</td>
+				<td>Date</td>
+				<td>Time</td>
+			</tr>
+            {% for i in x %}
+			<tr>
+				<td>{{ i.doctor_id }}</td>
+				<td>{{ i.review }}</td>
+				<td>{{ i.date }}</td>
+				<td>{{ i.time }}</td>
+			</tr>
+            {% endfor %}
+		</table>
+	</center>
+</body>
+</html>

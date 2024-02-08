@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<h1>Disease</h1>
+		<form method="post">
+            {% csrf_token %}
+			<table>
+				<tr>
+					<td>Name</td>
+					<td><input type="text" name="diname"></td>
+				</tr>
+				<tr>
+					<td>Symptom</td>
+					<td><input type="text" name="disymptom"></td>
+				</tr>
+				<tr>
+					<td>Image</td>
+					<td><input type="file" value="Choose a File" name="file"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Submit"></td>
+				</tr>
+			</table>
+	</center>
+
+</body>
+</html>

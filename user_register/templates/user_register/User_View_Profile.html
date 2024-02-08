@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<h1>View Profile</h1>
+		<table border="1">
+			<tr>
+				<td>Name</td>
+				<td>Mobile</td>
+				<td>Age</td>
+				<td>Gender</td>
+			</tr>
+            {% for i in x %}
+			<tr>
+				<td>{{ i.name }}</td>
+				<td>{{ i.mobile }}</td>
+				<td>{{ i.age }}</td>
+				<td>{{ i.gender }}</td>
+			</tr>
+            {% endfor %}
+		</table>
+	</center>
+
+</body>
+</html>
