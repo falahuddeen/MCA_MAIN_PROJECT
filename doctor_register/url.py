@@ -6,5 +6,8 @@ urlpatterns = [
     url('view_approved_doctor/',views.admin_view_approved_doctor),
     url('doctor_register/',views.doctor_registration),
     url('doctor_profile_management/',views.doctor_profile_managment),
-    url('user_view_doctor/',views.user_view_doctor)
+    url('user_view_doctor/',views.user_view_doctor),
+    url('approve/(?P<idd>\w+)',views.approve),
+    url('reject/(?P<idd>\w+)',views.reject),
+    url('doctor_update/(?P<idd>\w+)',views.doctor_update)
 ]

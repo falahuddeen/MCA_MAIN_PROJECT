@@ -17,8 +17,8 @@
 				<td>{{ i.schedule }}</td>
 				<td>{{ i.date }}</td>
 				<td>{{ i.time }}</td>
-				<td><a href="">Udate/Edit</a></td>
-				<td><a href="">Delete</a></td>
+				<td><a href="/schedule/ doctor_schedule_update/{{ i.schedule_id }}">Udate/Edit</a></td>
+				<td><a href="/schedule/ doctor_schedule_delete/{{ i.schedule_id }}">Delete</a></td>
 			</tr>
             {% endfor %}
 		</table>

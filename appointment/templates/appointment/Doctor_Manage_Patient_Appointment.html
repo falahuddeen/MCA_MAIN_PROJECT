@@ -8,14 +8,14 @@
 		<h1>Manage Patient Appointment</h1>
 		<table border="1">
 			<tr>
-				<td>User ID</td>
+				<td>User Name</td>
 				<td>Date</td>
 				<td>Time</td>
 				<td>Status</td>
 			</tr>
             {% for i in x %}
 			<tr>
-				<td>{{ i.user_id }}</td>
+				<td>{{ i.user.name }}</td>
 				<td>{{ i.date }}</td>
 				<td>{{ i.time }}</td>
                 <td>{{ i.status }}</td>

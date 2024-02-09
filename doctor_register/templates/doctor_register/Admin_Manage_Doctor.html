@@ -29,8 +29,8 @@
 				<td>{{ i.specialization }}</td>
 				<td>{{ i.profile_pic }}</td>
 				<td>{{ i.status }}</td>
-				<td><a href="">Approve</td>
-				<td><a href="">Reject</td>
+                <td><a href="/doctor_register/ approve/{{ i.doctor_id }}">Approve</a></td>
+                <td><a href="/doctor_register/ reject/{{ i.doctor_id }}">Reject</a></td>
 			</tr>
             {% endfor %}
 		</table>

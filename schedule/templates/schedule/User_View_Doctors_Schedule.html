@@ -13,8 +13,8 @@
 			</tr>
             {% for i in x %}
 			<tr>
-				<td>{{ i.doctor_id }}</td>
-				<td><a href="">Appointment</a></td>
+				<td>{{ i.doctor.name }}</td>
+				<td><a href="/appointment/appointment/{{ i.schedule_id }}">Appointment</a></td>
 			</tr>
             {% endfor %}
 		</table>

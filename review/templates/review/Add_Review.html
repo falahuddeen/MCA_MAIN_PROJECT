@@ -11,7 +11,12 @@
 			<table>
 				<tr>
 					<td>Select Doctor</td>
-					<td><select name='dname'></select></td>
+					<td><select name='dname'>
+                        <option>-----SELECT-----</option>
+                        {% for i in x %}
+                            <option value="{{ i.doctor_id }}">{{ i.name }}</option>
+                        {% endfor %}
+                    </select></td>
 				</tr>
 				<tr>
 					<td>Review</td>

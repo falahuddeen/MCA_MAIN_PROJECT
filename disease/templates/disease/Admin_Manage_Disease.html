@@ -17,8 +17,8 @@
 				<td>{{ i.disease_name }}</td>
 				<td>{{ i.disease_symptom }}</td>
 				<td>{{ i.disease_image }}</td>
-				<td><a href="">Udate/Edit</a></td>
-				<td><a href="">Delete</a></td>
+				<td><a href="/disease/ admin_update/{{ i.disease_id }}">Udate/Edit</a></td>
+				<td><a href="/disease/ admin_delete/{{ i.disease_id }}">Delete</a></td>
 			</tr>
             {% endfor %}
 		</table>

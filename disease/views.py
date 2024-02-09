@@ -19,9 +19,48 @@ def admin_manage_disease(request):
     }
     return render(request,'disease/Admin_Manage_Disease.html',context)
 
+def admin_update(request,idd):
+    obj = Disease.objects.get(disease_id=idd)
+    context = {
+        'x': obj
+    }
+    if request.method=='POST':
+        obj=Disease.objects.get(disease_id=idd)
+        obj.disease_name=request.POST.get('diname')
+        obj.disease_symptom=request.POST.get('disymptom')
+        obj.disease_image=request.POST.get('file')
+        obj.save()
+        return admin_manage_disease(request)
+    return render(request, 'disease/Admin_Update.html', context)
+
+def admin_delete(request,idd):
+    obj=Disease.objects.get(disease_id=idd)
+    obj.delete()
+    return admin_manage_disease(request)
+
 def doctor_manage_disease(request):
     obj = Disease.objects.all()
     context = {
         'x': obj
     }
     return render(request,'disease/Doctor_View_and_Update_Disease.html',context)
+
+
+def doctor_update(request,idd):
+    obj = Disease.objects.get(disease_id=idd)
+    context = {
+        'x': obj
+    }
+    if request.method=='POST':
+        obj=Disease.objects.get(disease_id=idd)
+        obj.disease_name=request.POST.get('diname')
+        obj.disease_symptom=request.POST.get('disymptom')
+        obj.disease_image=request.POST.get('file')
+        obj.save()
+        return admin_manage_disease(request)
+    return render(request, 'disease/Doctor_Update.html', context)
+
+def doctor_delete(request,idd):
+    obj=Disease.objects.get(disease_id=idd)
+    obj.delete()
+    return doctor_manage_disease(request)
