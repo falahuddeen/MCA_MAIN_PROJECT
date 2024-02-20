@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'review.apps.ReviewConfig',
     'schedule.apps.ScheduleConfig',
     'user_register.apps.UserRegisterConfig',
+    'temp.apps.TempConfig'
 ]
 
 MIDDLEWARE = [

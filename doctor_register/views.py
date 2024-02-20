@@ -40,6 +40,7 @@ def doctor_registration(request):
         obj.specialization=request.POST.get('specialization')
         obj.profile_pic=request.POST.get('profile_pic')
         obj.password=request.POST.get('dpass')
+        obj.status='Pending'
         obj.save()
     return render(request,'doctor_register/Doctor_Registration.html')
 

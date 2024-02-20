@@ -28,5 +28,6 @@ urlpatterns = [
     url('review/', include('review.url')),
     url('schedule/', include('schedule.url')),
     url('user_register/', include('user_register.url')),
+    url('temp/', include('temp.url'))
 
 ]
