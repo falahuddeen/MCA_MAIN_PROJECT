@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from doctor_register.models import DoctorRegister
+from login.models import Login
 # Create your views here.
 
 def admin_manage_doctor(request):
@@ -42,6 +43,12 @@ def doctor_registration(request):
         obj.password=request.POST.get('dpass')
         obj.status='Pending'
         obj.save()
+        ob1=Login()
+        ob1.username=obj.name
+        ob1.password=obj.password
+        ob1.type='doctor'
+        ob1.uid=obj.doctor_id
+        ob1.save()
     return render(request,'doctor_register/Doctor_Registration.html')
 
 def doctor_profile_managment(request):

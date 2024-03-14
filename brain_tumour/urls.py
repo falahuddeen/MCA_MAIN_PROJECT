@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path,include
-
+from temp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     url('appointment/',include('appointment.url')),
@@ -28,6 +28,7 @@ urlpatterns = [
     url('review/', include('review.url')),
     url('schedule/', include('schedule.url')),
     url('user_register/', include('user_register.url')),
-    url('temp/', include('temp.url'))
+    url('temp/', include('temp.url')),
+    url('$',views.home)
 
 ]

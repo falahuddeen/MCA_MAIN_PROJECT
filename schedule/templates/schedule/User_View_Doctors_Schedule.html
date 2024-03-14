@@ -1,3 +1,5 @@
+{% extends 'temp/user-page.html' %}
+{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +8,7 @@
 <body>
 	<center>
 		<h1>View Doctors Schedule</h1>
-		<table border="1">
+		<table border="1" class="table table-dark">
 			<tr>
 				<td>Doctor Name</td>
 				<td>Schedule</td>
@@ -22,3 +24,4 @@
 
 </body>
 </html>
+{% endblock %}

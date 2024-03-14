@@ -1,3 +1,5 @@
+{% extends 'temp/home-page.html' %}
+{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,22 +8,27 @@
 <body>
 	<center>
 		<h1>Login</h1>
+        <div style="width: 40%">
 		<form method="post">
-			<table>
+            {% csrf_token %}
+			<table class="table table-success table-borderless">
 				<tr>
-					<td>Username</td>
-					<td><input type="text" name="username"></td>
+					<td align="center">Username</td>
+					<td align="center"><input type="text" name="username"></td>
 				</tr>
 				<tr>
-					<td>Password</td>
-					<td><input type="Password" name="pass"></td>
+					<td align="center">Password</td>
+					<td align="center"><input type="Password" name="pass"></td>
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="submit" value="Login"></td>
+					<td align="center"><input type="submit" value="Login"></td>
 				</tr>
 			</table>
+        </form>
+            </div>
 	</center>
 
 </body>
 </html>
+{% endblock %}

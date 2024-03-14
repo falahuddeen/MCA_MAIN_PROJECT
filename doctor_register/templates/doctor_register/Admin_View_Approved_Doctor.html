@@ -1,3 +1,5 @@
+{% extends 'temp/admin-page.html' %}
+{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +8,7 @@
 <body>
 	<center>
 		<h1>View Approved Doctors</h1>
-		<table border="1">
+		<table border="1" class="table table-dark">
 			<tr>
 				<td>Doctor Name</td>
 				<td>Mobile</td>
@@ -36,3 +38,4 @@
 
 </body>
 </html>
+{% endblock %}

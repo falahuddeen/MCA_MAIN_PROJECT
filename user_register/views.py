@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from user_register.models import UserRegister
+from login.models import Login
 # Create your views here.
 
 
@@ -20,6 +21,12 @@ def user_registration(request):
         obj.gender=request.POST.get('Gender')
         obj.password=request.POST.get('pass')
         obj.save()
+        ob1=Login()
+        ob1.username=obj.name
+        ob1.password=obj.password
+        ob1.type="user"
+        ob1.uid=obj.user_id
+        ob1.save()
     return render(request,'user_register/User_Registration.html')
 
 def user_view_profile(request):

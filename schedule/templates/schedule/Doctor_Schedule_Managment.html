@@ -1,3 +1,5 @@
+{% extends 'temp/doctor-page.html' %}
+{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,11 +8,13 @@
 <body>
 	<center>
 		<h1>Schedule Managment</h1>
-		<table border="1">
+		<table border="1" class="table table-dark">
 			<tr>
 				<td>Schedule</td>
 				<td>Date</td>
 				<td>Time</td>
+                <td></td>
+                <td></td>
 			</tr>
             {% for i in x %}
 			<tr>
@@ -26,3 +30,4 @@
 
 </body>
 </html>
+{% endblock %}
