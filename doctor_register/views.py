@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from doctor_register.models import DoctorRegister
 from login.models import Login
+from django.core.files.storage import FileSystemStorage
+
 # Create your views here.
 
 def admin_manage_doctor(request):
@@ -37,9 +39,19 @@ def doctor_registration(request):
         obj.email=request.POST.get('dmail')
         obj.age=request.POST.get('dmobile')
         obj.gender=request.POST.get('Gender')
-        obj.qualification=request.POST.get('file')
+        # obj.qualification=request.POST.get('file')
         obj.specialization=request.POST.get('specialization')
-        obj.profile_pic=request.POST.get('profile_pic')
+        myfile1 = request.FILES["file"]
+        fs = FileSystemStorage()
+        filname = fs.save(myfile1.name, myfile1)
+        obj.qualification=myfile1.name
+        #image
+
+        myfile=request.FILES["profile_pic"]
+        fs=FileSystemStorage()
+        filname=fs.save(myfile.name,myfile)
+        obj.profile_pic=myfile.name
+        #image
         obj.password=request.POST.get('dpass')
         obj.status='Pending'
         obj.save()
