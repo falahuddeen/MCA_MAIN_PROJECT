@@ -30,7 +30,8 @@ def user_registration(request):
     return render(request,'user_register/User_Registration.html')
 
 def user_view_profile(request):
-    obj = UserRegister.objects.all()
+    uid=request.session["u_id"]
+    obj = UserRegister.objects.filter(user_id=uid)
     data = {
         'x': obj
     }

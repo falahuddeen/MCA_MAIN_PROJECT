@@ -6,7 +6,8 @@ import datetime
 
 
 def schedule_management(request):
-    obj=Schedule.objects.all()
+    did=request.session["u_id"]
+    obj=Schedule.objects.filter(doctor_id=did)
     data={
         'x':obj
     }
@@ -18,7 +19,8 @@ def doctor_schedule_update(request,idd):
     }
     if request.method=="POST":
         obj = Schedule.objects.get(schedule_id=idd)
-        obj.doctor_id = 1
+        uid = request.session["u_id"]
+        obj.doctor_id = uid
         obj.schedule = request.POST.get('schedule')
         obj.date = datetime.datetime.today()
         obj.time = datetime.datetime.today()
@@ -34,7 +36,8 @@ def doctor_schedule_delete(request,idd):
 def schedule(request):
     if request.method=='POST':
         obj=Schedule()
-        obj.doctor_id=1
+        uid=request.session["u_id"]
+        obj.doctor_id=uid
         obj.schedule=request.POST.get('schedule')
         obj.date=datetime.datetime.today()
         obj.time=datetime.datetime.today()

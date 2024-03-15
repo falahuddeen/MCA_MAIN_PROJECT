@@ -8,7 +8,8 @@ import datetime
 def add_feedback(request):
     if request.method=='POST':
         obj=Feedback()
-        obj.user_id=1
+        uid=request.session["u_id"]
+        obj.user_id=uid
         obj.feedback=request.POST.get('feedback')
         obj.date=datetime.datetime.today()
         obj.time=datetime.datetime.today()

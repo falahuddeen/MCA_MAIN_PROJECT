@@ -52,7 +52,8 @@ def doctor_registration(request):
     return render(request,'doctor_register/Doctor_Registration.html')
 
 def doctor_profile_managment(request):
-    obj = DoctorRegister.objects.all()
+    uid=request.session["u_id"]
+    obj = DoctorRegister.objects.filter(doctor_id=uid)
     data = {
         'x': obj
     }

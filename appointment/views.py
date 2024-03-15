@@ -11,7 +11,8 @@ def appointment(request,idd):
     }
     if request.method=='POST':
         obj=Appointment()
-        obj.user_id=1
+        uid=request.session["u_id"]
+        obj.user_id=uid
         obj.doctor_id=request.POST.get('dname')
         obj.schedule_id=idd
         obj.date=request.POST.get('date')
@@ -22,7 +23,8 @@ def appointment(request,idd):
 
 
 def manage_appointment(request):
-    obj=Appointment.objects.all()
+    uid=request.session["u_id"]
+    obj=Appointment.objects.filter(doctor_id=uid)
     context={
         'x':obj
     }
@@ -42,8 +44,11 @@ def reject(request,idd):
     return manage_appointment(request)
 
 def user_view_status(request):
-    #need session data
-    obj=Appointment.objects.all()
-    return render(request,'appointment/User_View_Appointment_Status.html')
+    uid=request.session["u_id"]
+    obj=Appointment.objects.filter(user_id=uid)
+    context={
+        'x':obj
+    }
+    return render(request,'appointment/User_View_Appointment_Status.html',context)
 
 

@@ -12,7 +12,8 @@ def add_review(request):
     }
     if request.method=='POST':
         obj=Review()
-        obj.user_id=1
+        uid=request.session["u_id"]
+        obj.user_id=uid
         obj.doctor_id=request.POST.get('dname')
         obj.review=request.POST.get('review')
         obj.date=datetime.datetime.today()
@@ -28,7 +29,8 @@ def admin_view_doctor_review(request):
     return render(request,'review/Admin_View_Doctor_Review.html',data)
 
 def doctor_view_review(request):
-    obj = Review.objects.all()
+    uid=request.session["u_id"]
+    obj = Review.objects.filter(doctor_id=uid)
     data = {
         'x': obj
     }
