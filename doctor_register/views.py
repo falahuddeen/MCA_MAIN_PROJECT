@@ -92,7 +92,7 @@ def doctor_update(request,idd):
     return render(request, 'doctor_register/Doctor_Profile_Update.html', context)
 
 def user_view_doctor(request):
-    obj = DoctorRegister.objects.all()
+    obj = DoctorRegister.objects.filter(status="Approved")
     data= {
         'x': obj
     }

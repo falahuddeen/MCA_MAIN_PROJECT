@@ -6,7 +6,7 @@ import datetime
 
 
 def add_review(request):
-    obj=DoctorRegister.objects.all()
+    obj=DoctorRegister.objects.filter(status="Approved")
     data={
         'x':obj
     }
