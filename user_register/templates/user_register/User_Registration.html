@@ -14,23 +14,23 @@
 			<table class="table table-success table-borderless">
 				<tr>
 					<td align="center">Name</td>
-					<td align="center"><input type="text" name="uname"></td>
+					<td align="center"><input type="text" name="uname" required></td>
 				</tr>
 				<tr>
 					<td align="center">Mobile</td>
-					<td align="center"><input type="number" name="umobile"></td>
+					<td align="center"><input type="text" name="umobile" pattern="[0-9]{10}" required></td>
 				</tr>
 				<tr>
 					<td align="center">Age</td>
-					<td align="center"><input type="number" name="uage"></td>
+					<td align="center"><input type="number" name="uage" required></td>
 				</tr>
 				<tr>
 					<td align="center">Gender</td>
-					<td align="center"><input type="radio" name="Gender" value="male">Male<input type="radio" name="Gender" value="female">Female</td>
+					<td align="center"><input type="radio" name="Gender" value="male" required>Male<input type="radio" name="Gender" value="female" required>Female</td>
 				</tr>
 				<tr>
 					<td align="center">Password</td>
-					<td align="center"><input type="Password" name="pass"></td>
+					<td align="center"><input type="Password" name="pass" minlength="8" required></td>
 				</tr>
 				<tr>
 					<td></td>

@@ -14,31 +14,31 @@
 			<table class="table table-success table-borderless">
 				<tr>
 					<td align="center">Name</td>
-					<td align="center"><input type="text" name="dname"></td>
+					<td align="center"><input type="text" name="dname" required></td>
 				</tr>
 				<tr>
 					<td align="center">Mobile</td>
-					<td align="center"><input type="number" name="dmobile"></td>
+					<td align="center"><input type="text" pattern="[0-9]{10}" name="dmobile" required></td>
 				</tr>
 				<tr>
 					<td align="center">Email</td>
-					<td align="center"><input type="email" name="dmail"></td>
+					<td align="center"><input type="email" name="dmail" required></td>
 				</tr>
 				<tr>
 					<td align="center">Age</td>
-					<td align="center"><input type="number" name="dmobile"></td>
+					<td align="center"><input type="number" name="age" required></td>
 				</tr>
 				<tr>
 					<td align="center">Gender</td>
-					<td align="center"><input type="radio" name="Gender" value="male">Male<input type="radio" name="Gender" value="female">Female</td>
+					<td align="center"><input type="radio" name="Gender" value="male" required>Male<input type="radio" name="Gender" value="female" required>Female</td>
 				</tr>
 				<tr>
 					<td align="center">Qualification</td>
-					<td align="center"><input type="file" value="Choose a File" name="file"></td>
+					<td align="center"><input type="file" value="Choose a File" name="file" required></td>
 				</tr>
 				<tr>
 					<td align="center">Specialization</td>
-					<td align="center"><input type="text" name="specialization"></td>
+					<td align="center"><input type="text" name="specialization" required></td>
 				</tr>
 				<tr>
 					<td align="center">Profile Picture</td>
@@ -46,7 +46,7 @@
 				</tr>
 				<tr>
 					<td align="center">Password</td>
-					<td align="center"><input type="Password" name="dpass"></td>
+					<td align="center"><input type="Password" minlength="8" name="dpass"></td>
 				</tr>
 				<tr>
 					<td></td>

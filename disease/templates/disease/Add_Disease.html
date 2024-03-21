@@ -9,20 +9,20 @@
 	<center>
 		<h1>Disease</h1>
         <div style="width: 40%">
-		<form method="post">
+		<form method="post" enctype="multipart/form-data">
             {% csrf_token %}
 			<table class="table table-success table-borderless">
 				<tr>
 					<td align="center">Name</td>
-					<td align="center"><input type="text" name="diname"></td>
+					<td align="center"><input type="text" name="diname" required></td>
 				</tr>
 				<tr>
 					<td align="center">Symptom</td>
-					<td align="center"><input type="text" name="disymptom"></td>
+					<td align="center"><input type="text" name="disymptom" required></td>
 				</tr>
 				<tr>
 					<td align="center">Image</td>
-					<td align="center"><input type="file" value="Choose a File" name="file"></td>
+					<td align="center"><input type="file" value="Choose a File" name="file" required></td>
 				</tr>
 				<tr>
 					<td align="center"></td>

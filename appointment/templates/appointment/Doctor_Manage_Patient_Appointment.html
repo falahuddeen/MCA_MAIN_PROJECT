@@ -15,7 +15,6 @@
 				<td>Time</td>
 				<td>Status</td>
                 <td></td>
-                <td></td>
 			</tr>
             {% for i in x %}
 			<tr>
@@ -23,8 +22,9 @@
 				<td>{{ i.date }}</td>
 				<td>{{ i.time }}</td>
                 <td>{{ i.status }}</td>
-				<td><a href="/appointment/ approve/{{ i.appointment_id }}">Approve</a></td>
-				<td><a href="/appointment/ reject/{{ i.appointment_id }}">Reject</a></td>
+                <td><a href="/appointment/schedule_time/{{ i.appointment_id }}">Schedule time</a></td>
+{#				<td><a href="/appointment/ approve/{{ i.appointment_id }}">Approve</a></td>#}
+{#				<td><a href="/appointment/ reject/{{ i.appointment_id }}">Reject</a></td>#}
 			</tr>
             {% endfor %}
 		</table>

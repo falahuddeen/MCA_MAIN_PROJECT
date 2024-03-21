@@ -14,21 +14,18 @@
 			<table class="table table-success table-borderless">
 				<tr>
 					<td align="center">Select Doctor</td>
-					<td align="center"><select name='dname'>
-                        <option>-----SELECT-----</option>
-                        {% for i in a %}
-                            <option value="{{ i.doctor_id }}">{{ i.name }}</option>
-                        {% endfor %}
-                    </select></td>
+                    <td align="center">
+                        <input type="text" value="{{ a.doctor.name }}" required="">
+                    </td>
 				</tr>
 				<tr>
 					<td align="center">Select Date</td>
-					<td align="center"><input type="date" name="date"></td>
+					<td align="center"><input type="date" name="date" required></td>
 				</tr>
-                <tr>
-					<td align="center">Select Time</td>
-					<td><input type="time" name="time"></td>
-				</tr>
+{#                <tr>#}
+{#					<td align="center">Select Time</td>#}
+{#					<td><input type="time" name="time" required></td>#}
+{#				</tr>#}
 				<tr>
 					<td></td>
 					<td><input type="submit" value="Submit"></td>

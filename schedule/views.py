@@ -34,6 +34,14 @@ def doctor_schedule_delete(request,idd):
     return schedule_management(request)
 
 def schedule(request):
+    uid=request.session["u_id"]
+    ob = Schedule.objects.filter(doctor_id=uid)
+    if ob!='':
+        message = "You Already Added a Schedule, So Update it.."
+        context = {
+            'msg': message,
+        }
+        return render(request, 'temp/doctor.html', context)
     if request.method=='POST':
         obj=Schedule()
         uid=request.session["u_id"]

@@ -651,6 +651,13 @@
 
     <!-- Template Javascript -->
     <script src="/static/js/main.js"></script>
+
+{% if msg %}
+    <script>
+    var m="{{ msg }}"
+    alert(m)
+    </script>
+{% endif %}
 </body>
 
 </html>

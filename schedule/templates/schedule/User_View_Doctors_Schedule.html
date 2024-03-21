@@ -7,15 +7,22 @@
 </head>
 <body>
 	<center>
-		<h1>View Doctors Schedule</h1>
+		<h1>View Doctors Schedule and Appointment</h1>
 		<table border="1" class="table table-dark">
 			<tr>
 				<td>Doctor Name</td>
-				<td>Schedule</td>
+                <td>Profile Picture</td>
+                <td>Doctor Schedule</td>
+                <td>Specialization</td>
+                
+				<td></td>
 			</tr>
             {% for i in x %}
 			<tr>
 				<td>{{ i.doctor.name }}</td>
+                <td><img src="/static/{{ i.doctor.profile_pic }}" width="100px" height="100px"></td>
+                <td>{{ i.schedule }}</td>
+                <td>{{ i.doctor.specialization }}</td>
 				<td><a href="/appointment/appointment/{{ i.schedule_id }}">Appointment</a></td>
 			</tr>
             {% endfor %}

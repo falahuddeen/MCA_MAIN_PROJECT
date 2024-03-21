@@ -37,7 +37,7 @@ def doctor_registration(request):
         obj.name=request.POST.get('dname')
         obj.mobile=request.POST.get('dmobile')
         obj.email=request.POST.get('dmail')
-        obj.age=request.POST.get('dmobile')
+        obj.age=request.POST.get('age')
         obj.gender=request.POST.get('Gender')
         # obj.qualification=request.POST.get('file')
         obj.specialization=request.POST.get('specialization')
@@ -46,7 +46,6 @@ def doctor_registration(request):
         filname = fs.save(myfile1.name, myfile1)
         obj.qualification=myfile1.name
         #image
-
         myfile=request.FILES["profile_pic"]
         fs=FileSystemStorage()
         filname=fs.save(myfile.name,myfile)
@@ -61,6 +60,12 @@ def doctor_registration(request):
         ob1.type='doctor'
         ob1.uid=obj.doctor_id
         ob1.save()
+    # else:
+    #     message = "Enter Data to Register.!"
+    #     context = {
+    #         'msg': message,
+    #     }
+    #     return render(request, 'doctor_register/Doctor_Registration.html', context)
     return render(request,'doctor_register/Doctor_Registration.html')
 
 def doctor_profile_managment(request):
@@ -81,11 +86,17 @@ def doctor_update(request,idd):
         obj.name=request.POST.get('dname')
         obj.mobile=request.POST.get('dmobile')
         obj.email=request.POST.get('dmail')
-        obj.age=request.POST.get('dmobile')
+        obj.age=request.POST.get('age')
         obj.gender=request.POST.get('Gender')
-        obj.qualification=request.POST.get('file')
+        myfile = request.FILES["file"]
+        fs = FileSystemStorage()
+        filname = fs.save(myfile.name, myfile)
+        obj.qualification = myfile.name
         obj.specialization=request.POST.get('specialization')
-        obj.profile_pic=request.POST.get('profile_pic')
+        myfile = request.FILES["profile_pic"]
+        fs = FileSystemStorage()
+        filname = fs.save(myfile.name, myfile)
+        obj.profile_pic = myfile.name
         obj.password=request.POST.get('dpass')
         obj.save()
         return doctor_profile_managment(request)

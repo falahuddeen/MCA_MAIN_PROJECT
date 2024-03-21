@@ -1,3 +1,4 @@
+from django.core.files.storage import FileSystemStorage
 from django.shortcuts import render
 from disease.models import Disease
 # Create your views here.
@@ -8,7 +9,12 @@ def add_disease(request):
         obj=Disease()
         obj.disease_name=request.POST.get('diname')
         obj.disease_symptom=request.POST.get('disymptom')
-        obj.disease_image=request.POST.get('file')
+
+        myfile1 = request.FILES["file"]
+        fs = FileSystemStorage()
+        filname = fs.save(myfile1.name, myfile1)
+        obj.disease_image=myfile1.name
+
         obj.save()
     return render(request,'disease/Add_Disease.html')
 
@@ -28,7 +34,11 @@ def admin_update(request,idd):
         obj=Disease.objects.get(disease_id=idd)
         obj.disease_name=request.POST.get('diname')
         obj.disease_symptom=request.POST.get('disymptom')
-        obj.disease_image=request.POST.get('file')
+
+        myfile1 = request.FILES["file"]
+        fs = FileSystemStorage()
+        filname = fs.save(myfile1.name, myfile1)
+        obj.disease_image = myfile1.name
         obj.save()
         return admin_manage_disease(request)
     return render(request, 'disease/Admin_Update.html', context)
@@ -55,7 +65,12 @@ def doctor_update(request,idd):
         obj=Disease.objects.get(disease_id=idd)
         obj.disease_name=request.POST.get('diname')
         obj.disease_symptom=request.POST.get('disymptom')
-        obj.disease_image=request.POST.get('file')
+
+        myfile1 = request.FILES["file"]
+        fs = FileSystemStorage()
+        filname = fs.save(myfile1.name, myfile1)
+        obj.disease_image = myfile1.name
+
         obj.save()
         return admin_manage_disease(request)
     return render(request, 'disease/Doctor_Update.html', context)

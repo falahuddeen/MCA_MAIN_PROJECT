@@ -10,8 +10,6 @@ class Appointment(models.Model):
     appointment_id = models.AutoField(primary_key=True)
     # user_id = models.IntegerField()
     user=models.ForeignKey(UserRegister,on_delete=models.CASCADE)
-    # doctor_id = models.IntegerField()
-    doctor=models.ForeignKey(DoctorRegister,on_delete=models.CASCADE)
     # schedule_id = models.IntegerField()
     schedule=models.ForeignKey(Schedule,on_delete=models.CASCADE)
     date = models.DateField()
