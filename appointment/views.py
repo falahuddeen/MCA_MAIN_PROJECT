@@ -1,7 +1,10 @@
+from macpath import split
+
 from django.shortcuts import render
 from appointment.models import Appointment
 from doctor_register.models import DoctorRegister
 from schedule.models import Schedule
+from datetime import datetime
 
 # Create your views here.
 
@@ -43,12 +46,16 @@ def schedule_time(request,idd):
     context={
         'x':obj,
     }
+    dateconvert=split(str(obj.date))
+    c={
+        "date":dateconvert[1]
+    }
     if request.method=="POST":
         obj=Appointment.objects.get(appointment_id=idd)
         obj.status='Time Scheduled'
         obj.time=request.POST.get('time')
         obj.save()
-    return render(request, 'appointment/Schedule_Time.html')
+    return render(request, 'appointment/Schedule_Time.html',c)
 
 # def reject(request,idd):
 #     obj=Appointment.objects.get(appointment_id=idd)

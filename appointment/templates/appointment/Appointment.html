@@ -13,20 +13,16 @@
             {% csrf_token %}
 			<table class="table table-success table-borderless">
 				<tr>
-					<td align="center">Select Doctor</td>
+					<td align="center">Selected Doctor</td>
                     <td align="center">
                         <input type="text" value="{{ a.doctor.name }}" required="">
                     </td>
 				</tr>
 				<tr>
 					<td align="center">Select Date</td>
-					<td align="center"><input type="date" name="date" required></td>
+					<td align="center"><input type="date" id="appointmentDate" name="date" required></td>
 				</tr>
-{#                <tr>#}
-{#					<td align="center">Select Time</td>#}
-{#					<td><input type="time" name="time" required></td>#}
-{#				</tr>#}
-				<tr>
+                <tr>
 					<td></td>
 					<td><input type="submit" value="Submit"></td>
 				</tr>
@@ -34,7 +30,19 @@
         </form>
     </div>
 	</center>
+<script>
+        // Get today's date
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+        var yyyy = today.getFullYear();
 
+        // Format today's date as yyyy-mm-dd
+        today = yyyy + '-' + mm + '-' + dd;
+
+        // Set the minimum date for the appointmentDate input
+        document.getElementById("appointmentDate").setAttribute("min", today);
+    </script>
 </body>
 </html>
 {% endblock %}

@@ -1,5 +1,7 @@
 {% extends 'temp/doctor-page.html' %}
 {% block content %}
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +16,7 @@
 			<table class="table table-success table-borderless">
                 <tr>
 					<td align="center">Select Time</td>
-					<td><input type="time" name="time" required></td>
+					<td><input type="time" id="scheduleTime" name="time" required></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -24,7 +26,35 @@
         </form>
     </div>
 	</center>
+ <script>
+        // Get today's date
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+        var yyyy = today.getFullYear();
 
+        // Format today's date as yyyy-mm-dd
+        today = yyyy + '-' + mm + '-' + dd;
+
+        // Get the appointment date from Django template variable
+        var apdate = new Date("{{ date }}");
+
+        // Convert apdate to yyyy-mm-dd format
+        var apdateFormatted = apdate.toISOString().slice(0,10);
+
+        // Get current time
+        var currentTime = new Date();
+
+        // If date is today, set min time to current time
+        if ( apdateFormatted === today ) {
+            var hours = String(currentTime.getHours()).padStart(2, '0');
+            var minutes = String(currentTime.getMinutes()).padStart(2, '0');
+            var minTime = hours + ':' + minutes;
+
+            // Set the minimum time for the scheduleTime input
+            document.getElementById("scheduleTime").setAttribute("min", minTime);
+        }
+    </script>
 </body>
 </html>
 {% endblock %}
