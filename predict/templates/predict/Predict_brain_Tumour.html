@@ -1,0 +1,55 @@
+{% extends 'temp/doctor-page.html' %}
+{% block content %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
+    <title>Upload and Predict Brain Tumour</title>
+</head>
+<body>
+<center>
+    <h1>Upload and Predict Brain Tumour</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="table table-dark">
+            <tr>
+                <td align="center"><input type="file" name="image" required></td>
+        <td><button type="submit">Predict</button></td>
+            </tr>
+
+            </table>
+    </form>
+
+    <h2>Selected Image:</h2><br>
+    <div id="image-preview"></div>
+    {% for i in c %}
+    <h2> {{ class_name }}</h2>
+    <img src="{{ img }}" height="100%" width="100%">
+    {% endfor %}
+</center>
+    <script>
+        function previewImage(input) {
+            var preview = document.getElementById('image-preview');
+            preview.innerHTML = '';
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var image = document.createElement('img');
+                    image.src = e.target.result;
+                    image.style.maxWidth = '300px'; // Adjust max width as needed
+                    preview.appendChild(image);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        document.querySelector('input[name="image"]').addEventListener('change', function() {
+            previewImage(this);
+        });
+    </script>
+</body>
+</html>
+{% endblock %}

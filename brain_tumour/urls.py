@@ -29,6 +29,7 @@ urlpatterns = [
     url('schedule/', include('schedule.url')),
     url('user_register/', include('user_register.url')),
     url('temp/', include('temp.url')),
+    url('predict/', include('predict.url')),
     url('$',views.home)
 
 ]

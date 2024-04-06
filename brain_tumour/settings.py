@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'PIL',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -46,7 +47,8 @@ INSTALLED_APPS = [
     'review.apps.ReviewConfig',
     'schedule.apps.ScheduleConfig',
     'user_register.apps.UserRegisterConfig',
-    'temp.apps.TempConfig'
+    'temp.apps.TempConfig',
+    'predict.apps.PredictConfig'
 ]
 
 MIDDLEWARE = [
@@ -88,7 +90,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'fn_brain_tumour_mes',
         'USER':'root',
-        'PASSWORD':'root',
+        'PASSWORD':'',
         'HOST':'localhost',
         'PORT':''
     }
