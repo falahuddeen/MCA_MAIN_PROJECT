@@ -36,7 +36,10 @@ def doctor_schedule_delete(request,idd):
 def schedule(request):
     uid=request.session["u_id"]
     ob = Schedule.objects.filter(doctor_id=uid)
-    if ob!='':
+    ob_list = str(ob).split()
+    st = str(ob_list[1])
+    st = st[0:len(st) - 1]
+    if st!="[]":
         message = "You Already Added a Schedule, So Update it.."
         context = {
             'msg': message,
