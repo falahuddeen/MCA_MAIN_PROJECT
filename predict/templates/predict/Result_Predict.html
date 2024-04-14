@@ -23,8 +23,28 @@
 {#            </table>#}
 {#    </form>#}
 
+<div style="width:70%">
+    <table class="table table-success table-borderless">
+        <tr>
+            <th>
+                <h2 align="center">Selected Image:</h2>
+            </th>
+            <th >
+                <h2 align="center">Predicted Result:</h2>
+            </th>
+        </tr>
+        <tr>
+            <td align="center">
+                <img src="/static/{{ img }}" height="25%" width="25%">
+            </td>
+            <td align="center">
+                <h2>{{ x }}</h2>
+            </td>
+        </tr>
+    </table>
+</div>
 
-    <br><br><h2>Selected Image:</h2><img src="/static/{{ img }}"><br><br><br><br><h2>Predicted Result:</h2> <h2>{{ x }}</h2>
+{#    <br><br><h2>Selected Image:</h2><img src="/static/{{ img }}"><br><br><br><br><h2>Predicted Result:</h2> <h2>{{ x }}</h2>#}
     </center>
 {#    {% for i in c %}#}
 
