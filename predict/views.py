@@ -30,8 +30,16 @@ def predict(request):
         for index, item in enumerate(d):
             if item == j:
                 class_name = li[index]
+                if class_name=="Brain_Tumour_L1":
+                    result="Have Level 1 Brain Tumor"
+                elif class_name=="Brain_Tumour_L2":
+                    result = "Have Level 2 Brain Tumor"
+                elif class_name == "Brain_Tumour_L3":
+                    result = "Have Level 3 Brain Tumor"
+                elif class_name=="Brain_Tumour_L4":
+                    result = "Have Level 4 Brain Tumor"
                 c = {
-                    "x": class_name,
+                    "x": result,
                     "img": mfile
                 }
         # print(class_name)

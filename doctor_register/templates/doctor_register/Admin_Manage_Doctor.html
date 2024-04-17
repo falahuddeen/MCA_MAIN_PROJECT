@@ -3,6 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
 	<title></title>
 </head>
 <body>
@@ -29,9 +36,17 @@
 				<td>{{ i.email }}</td>
 				<td>{{ i.age }}</td>
 				<td>{{ i.gender }}</td>
-				<td><img src="/static/{{ i.qualification }}" width="100px" height="100px"></td>
+
+                <td><img src="/static/{{ i.qualification }}" class="img-thumbnail profile-image" alt="Doctor Profile" data-toggle="modal" data-target="#imageModal">
+                </td>
+
+{#				<td><img src="/static/{{ i.qualification }}" width="100px" height="100px"></td>#}
 				<td>{{ i.specialization }}</td>
-				<td><img src="/static/{{ i.profile_pic }}" width="100px" height="100px"></td>
+
+                <td><img src="/static/{{ i.profile_pic }}" class="img-thumbnail profile-image" alt="Doctor Profile" data-toggle="modal" data-target="#imageModal">
+                </td>
+
+{#				<td><img src="/static/{{ i.profile_pic }}" width="100px" height="100px"></td>#}
 				<td>{{ i.status }}</td>
                 <td><a href="/doctor_register/ approve/{{ i.doctor_id }}">Approve</a></td>
                 <td><a href="/doctor_register/ reject/{{ i.doctor_id }}">Reject</a></td>
@@ -39,6 +54,37 @@
             {% endfor %}
 		</table>
 	</center>
+
+
+<!-- Bootstrap Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Zoomed View</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="" class="img-fluid" id="modalImage" alt="Doctor Profile">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.profile-image').click(function () {
+                var src = $(this).attr('src');
+                $('#modalImage').attr('src', src);
+            });
+        });
+    </script>
+
 
 </body>
 </html>
