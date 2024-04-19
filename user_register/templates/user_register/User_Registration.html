@@ -14,15 +14,15 @@
 			<table class="table table-success table-borderless">
 				<tr>
 					<td align="center">Name</td>
-					<td align="center"><input type="text" name="uname" required></td>
+					<td align="center"><input type="text" name="uname" pattern="[A-Za-z]+" title="Name can only contain letters" required></td>
 				</tr>
 				<tr>
 					<td align="center">Mobile</td>
-					<td align="center"><input type="text" name="umobile" pattern="[0-9]{10}" required></td>
+					<td align="center"><input type="text" name="umobile" pattern="[0-9]{10}" title="Enter the 10 digit number" required></td>
 				</tr>
 				<tr>
 					<td align="center">Age</td>
-					<td align="center"><input type="number" name="uage" required></td>
+					<td align="center"><input type="number" name="uage" pattern="\d{1,2}" title="Please enter a valid age between 1 and 99" required></td>
 				</tr>
 				<tr>
 					<td align="center">Gender</td>

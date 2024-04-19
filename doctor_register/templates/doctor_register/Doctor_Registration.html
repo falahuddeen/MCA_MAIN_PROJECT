@@ -14,11 +14,11 @@
 			<table class="table table-success table-borderless">
 				<tr>
 					<td align="center">Name</td>
-					<td align="center"><input type="text" name="dname" required></td>
+					<td align="center"><input type="text" name="dname" pattern="[A-Za-z]+" title="Name can only contain letters" required></td>
 				</tr>
 				<tr>
 					<td align="center">Mobile</td>
-					<td align="center"><input type="text" pattern="[0-9]{10}" name="dmobile" required></td>
+					<td align="center"><input type="text" pattern="[0-9]{10}" name="dmobile" title="Enter the 10 digit number" required></td>
 				</tr>
 				<tr>
 					<td align="center">Email</td>
@@ -26,7 +26,7 @@
 				</tr>
 				<tr>
 					<td align="center">Age</td>
-					<td align="center"><input type="number" name="age" required></td>
+					<td align="center"><input type="text" pattern="[0-9]{2}" title="Please enter a valid age between 1 and 99" name="age"  required></td></td>
 				</tr>
 				<tr>
 					<td align="center">Gender</td>
@@ -42,11 +42,11 @@
 				</tr>
 				<tr>
 					<td align="center">Profile Picture</td>
-					<td align="center"><input type="file" value="Choose a File" name="profile_pic"></td>
+					<td align="center"><input type="file" value="Choose a File" name="profile_pic" required></td>
 				</tr>
 				<tr>
 					<td align="center">Password</td>
-					<td align="center"><input type="Password" minlength="8" name="dpass"></td>
+					<td align="center"><input type="Password" minlength="8" name="dpass" required></td>
 				</tr>
 				<tr>
 					<td></td>

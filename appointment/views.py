@@ -35,12 +35,6 @@ def manage_appointment(request):
     return render(request,'appointment/Doctor_Manage_Patient_Appointment.html',context)
 
 
-# def approve(request,idd): removed method
-#     obj=Appointment.objects.get(appointment_id=idd)
-#     obj.status='Approved'
-#     obj.save()
-#     return manage_appointment(request)
-
 def schedule_time(request,idd):
     obj=Appointment.objects.get(appointment_id=idd)
     context={
@@ -56,12 +50,6 @@ def schedule_time(request,idd):
         obj.time=request.POST.get('time')
         obj.save()
     return render(request, 'appointment/Schedule_Time.html',c)
-
-# def reject(request,idd):
-#     obj=Appointment.objects.get(appointment_id=idd)
-#     obj.status='Rejected'
-#     obj.save()
-#     return manage_appointment(request)
 
 def user_view_status(request):
     uid=request.session["u_id"]

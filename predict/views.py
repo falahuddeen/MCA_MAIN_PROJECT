@@ -38,11 +38,12 @@ def predict(request):
                     result = "Have Level 3 Brain Tumor"
                 elif class_name=="Brain_Tumour_L4":
                     result = "Have Level 4 Brain Tumor"
+                elif class_name == "Healthy":
+                    result = "Not Have Brain Tumor"
                 c = {
                     "x": result,
                     "img": mfile
                 }
-        # print(class_name)
 
         return render(request,'predict/Result_Predict.html',c)
     return render(request,'predict/Predict_brain_Tumour.html')
