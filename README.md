@@ -89,6 +89,18 @@ These contributions represent a significant advancement in the field of medical 
 
 ## License
 This project is licensed under persional license of myself.
+Email : falahuddeen121@gmail.com
 
 ## If you need the model and the dataset and all the paper work related to this project you can visit the telegram channel provided given below.
-### <a href="https://t.me/+riFFTt0hHxg4NjZl">channel_link</a>
+### * <a href="https://t.me/+riFFTt0hHxg4NjZl">channel_link</a>
+## If you are unable to locate the main file from the channel you can use the given below link **after joining on the above channel**
+### * **<a href="https://t.me/c/2031504389/93">Model .rar file</a>**
+### * **<a href="https://t.me/c/2031504389/92">Used dataset .rar file</a>**
+### * **<a href="https://t.me/c/2031504389/172">Final project repor .pdf file</a>**
+### * <a href="https://t.me/c/2031504389/124">PyCharm installation file</a>
+### * <a href="https://t.me/c/2031504389/128">Anaconda installation file</a>
+### * <a href="https://t.me/c/2031504389/123">Python interpreter details for PyCharm </a>
+### * <a href="https://t.me/c/2031504389/125">Anaconda environment details </a>
+
+**Note : The above link are work only after you join on the telegram channel which is provided above**
+
