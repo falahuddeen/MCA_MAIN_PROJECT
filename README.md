@@ -91,6 +91,13 @@ These contributions represent a significant advancement in the field of medical 
 This project is licensed under persional license of myself.
 Email : falahuddeen121@gmail.com
 
+## Certificate
+Here is the certificate for my project:
+
+![Certificate Image](https://github.com/falahuddeen/MCA_MAIN_PROJECT/blob/master/MCA_Main_Certificate.JPG?raw=true)
+
+You can also view the project code and other details in the repository.
+
 ## If you need the model and the dataset and all the paper work related to this project you can visit the telegram channel provided given below.
 ### * <a href="https://t.me/+riFFTt0hHxg4NjZl">channel_link</a>
 ## If you are unable to locate the main file from the channel you can use the given below link **after joining on the above channel**
